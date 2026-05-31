@@ -1,0 +1,15 @@
+{
+  "name": "w3ti-site",
+  "version": "1.0.0",
+  "description": "Site institucional W3TI SERVIÇOS DE INFORMÁTICA LTDA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "W3TI SERVIÇOS DE INFORMÁTICA LTDA",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

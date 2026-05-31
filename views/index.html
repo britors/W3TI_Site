@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>W3TI — Soluções em Software para MPE</title>
+  <meta name="description" content="W3TI SERVIÇOS DE INFORMÁTICA LTDA — Software desktop para micro e pequenas empresas. Fina, Filo, Orbi e Prisma4Postgres."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Logo W3TI mark: letra W estilizada com acento tech -->
+        <rect width="36" height="36" rx="8" fill="#111827"/>
+        <path d="M6 10 L10 26 L14 16 L18 26 L22 10" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="26" cy="10" r="2.5" fill="#10B981"/>
+        <path d="M26 13 L26 26" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M23 13 L29 13" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-brand">W3TI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#opensource">Open Source</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="btn btn-sm">Falar com a equipe</a>
+    <button class="nav-toggle" aria-label="Menu" id="navToggle">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Software para micro , pequenas empresas e médias empresas
+    </div>
+    <h1 class="hero-title">
+      Software que<br/>
+      <span class="gradient-text">transforma gestão</span><br/>
+      em resultado
+    </h1>
+    <p class="hero-sub">
+      A W3TI desenvolve ferramentas desktop modernas para MPE brasileiras —
+      do CRM ao ERP, do controle financeiro à gestão de código.
+      Tudo pronto para usar, sem servidores, sem mensalidades.
+    </p>
+    <div class="hero-actions">
+      <a href="#produtos" class="btn btn-primary">
+        <i class="ti ti-apps"></i> Conhecer os produtos
+      </a>
+      <a href="#opensource" class="btn btn-ghost">
+        <i class="ti ti-brand-github"></i> Ver no GitHub
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-lbl">Produtos ativos</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl">Desktop & offline</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">MIT</span>
+        <span class="stat-lbl">Open source core</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <i class="ti ti-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ── PRODUTOS ─────────────────────────────────────────────────────────── -->
+<section id="produtos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Produtos</div>
+      <h2 class="section-title">Um ecossistema completo<br/>para a sua empresa</h2>
+      <p class="section-sub">
+        Cada produto foi pensado para resolver um problema real de MPE brasileiras,
+        com interface moderna e dados 100% no seu controle.
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Filo -->
+      <div class="product-card product-filo">
+        <div class="product-card-inner">
+          <div class="product-header">
+            <div class="product-icon" style="background:rgba(127,119,221,.15);border-color:rgba(127,119,221,.3)">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <line x1="7" y1="8" x2="14" y2="16" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="21" y1="8" x2="14" y2="16" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="7" y1="8" x2="21" y2="8" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="14" y1="16" x2="14" y2="22" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="7" cy="8" r="3" fill="#1A1530" stroke="#7F77DD" stroke-width="1.5"/>
+                <circle cx="21" cy="8" r="3" fill="#1A1530" stroke="#7F77DD" stroke-width="1.5"/>
+                <circle cx="14" cy="22" r="3" fill="#1A1530" stroke="#7F77DD" stroke-width="1.5"/>
+                <circle cx="14" cy="16" r="4.5" fill="#1A1530" stroke="#7F77DD" stroke-width="1.5"/>
+                <circle cx="14" cy="15" r="1.8" fill="#7F77DD"/>
+                <path d="M11.5 18.5 Q14 16.5 16.5 18.5" fill="#7F77DD"/>
+              </svg>
+            </div>
+            <div>
+              <div class="product-tag" style="color:#7F77DD;background:rgba(127,119,221,.1)">CRM</div>
+              <h3 class="product-name">Filo</h3>
+            </div>
+            <div class="product-soon" style="display:none">Em breve</div>
+          </div>
+          <p class="product-desc">
+            CRM para micro, pequenas e médias empresas. Gerencie contatos, empresas,
+            pipeline de vendas, propostas e histórico de interações — tudo em um só lugar.
+          </p>
+          <ul class="product-features">
+            <li><i class="ti ti-check"></i> Pipeline de vendas visual</li>
+            <li><i class="ti ti-check"></i> Propostas em PDF</li>
+            <li><i class="ti ti-check"></i> Agenda e follow-ups</li>
+            <li><i class="ti ti-check"></i> Módulos extensíveis em TypeScript</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-stack">
+              <span class="stack-tag">Gestão</span>
+              <span class="stack-tag">Metas de vendas</span>
+              <span class="stack-tag">Retenção de clientes</span>
+            </div>
+            <a href="#contato" class="btn btn-outline" style="--accent:#7F77DD;--accent-light:rgba(127,119,221,.15)">
+              Em breve <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="product-accent" style="background:#7F77DD"></div>
+      </div>
+
+      <!-- Fina -->
+      <div class="product-card product-fina">
+        <div class="product-card-inner">
+          <div class="product-header">
+            <div class="product-icon" style="background:rgba(29,158,117,.15);border-color:rgba(29,158,117,.3)">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <rect x="5" y="18" width="4" height="6" rx="1" fill="#1D9E75" opacity=".5"/>
+                <rect x="12" y="13" width="4" height="11" rx="1" fill="#1D9E75" opacity=".75"/>
+                <rect x="19" y="8" width="4" height="16" rx="1" fill="#1D9E75"/>
+                <polyline points="7,16 14,11 21,6" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="21" cy="6" r="2" fill="#5DCAA5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="product-tag" style="color:#1D9E75;background:rgba(29,158,117,.1)">Finanças</div>
+              <h3 class="product-name">Fina</h3>
+            </div>
+          </div>
+          <p class="product-desc">
+            Gerenciador financeiro para pessoas físicas.
+            Controle receitas, despesas, orçamentos e visualize seu fluxo de caixa com clareza.
+          </p>
+          <ul class="product-features">
+            <li><i class="ti ti-check"></i> Múltiplas contas e cartões</li>
+            <li><i class="ti ti-check"></i> Orçamento por categoria</li>
+            <li><i class="ti ti-check"></i> Relatórios e gráficos</li>
+            <li><i class="ti ti-check"></i> Importação OFX/CSV</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-stack">
+              <span class="stack-tag">Vida financeira</span>
+              <span class="stack-tag">Controle de gastos</span>
+            </div>
+            <a href="https://github.com/britors/Fina" target="_blank" rel="noopener" class="btn btn-outline" style="--accent:#EF9F27;--accent-light:rgba(239,159,39,.15)">
+              Ver no GitHub <i class="ti ti-brand-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="product-accent" style="background:#1D9E75"></div>
+      </div>
+
+      <!-- Orbi -->
+      <div class="product-card product-orbi">
+        <div class="product-card-inner">
+          <div class="product-header">
+            <div class="product-icon" style="background:rgba(59,111,232,.15);border-color:rgba(59,111,232,.3)">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <ellipse cx="14" cy="14" rx="12" ry="5" fill="none" stroke="#3B6FE8" stroke-width="1.3" opacity=".5"/>
+                <ellipse cx="14" cy="14" rx="9" ry="9" fill="none" stroke="#1E4DD8" stroke-width="1" stroke-dasharray="3 2" opacity=".5"/>
+                <ellipse cx="14" cy="14" rx="12" ry="5" fill="none" stroke="#3B6FE8" stroke-width="1.3" transform="rotate(60 14 14)" opacity=".6"/>
+                <circle cx="14" cy="14" r="4" fill="#0F2580"/>
+                <circle cx="14" cy="14" r="4" fill="none" stroke="#3B6FE8" stroke-width="1.2"/>
+                <circle cx="14" cy="14" r="2" fill="#1A3DB5"/>
+                <circle cx="26" cy="14" r="2" fill="#3B6FE8"/>
+                <circle cx="8" cy="6" r="1.5" fill="#6B9AF5" opacity=".8"/>
+              </svg>
+            </div>
+            <div>
+              <div class="product-tag" style="color:#3B6FE8;background:rgba(59,111,232,.1)">ERP</div>
+              <h3 class="product-name">Orbi</h3>
+            </div>
+          </div>
+          <p class="product-desc">
+            ERP completo para pequenas e médias empresas. Estoque, compras,
+            vendas, fiscal, RH e financeiro — tudo integrado e extensível via módulos TypeScript.
+          </p>
+          <ul class="product-features">
+            <li><i class="ti ti-check"></i> Estoque e compras</li>
+            <li><i class="ti ti-check"></i> Emissão de NF-e estrutural</li>
+            <li><i class="ti ti-check"></i> RH e folha de pagamento</li>
+            <li><i class="ti ti-check"></i> Módulos TypeScript extensíveis</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-stack">
+              <span class="stack-tag">Controle</span>
+              <span class="stack-tag">RH</span>
+              <span class="stack-tag">Estoque</span>
+            </div>
+            <a href="#contato" class="btn btn-outline" style="--accent:#3B6FE8;--accent-light:rgba(59,111,232,.15)">
+              Em breve <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="product-accent" style="background:#3B6FE8"></div>
+      </div>
+
+      <!-- Prisma4Postgres -->
+      <div class="product-card product-prisma">
+        <div class="product-card-inner">
+          <div class="product-header">
+            <div class="product-icon" style="background:rgba(239,159,39,.15);border-color:rgba(239,159,39,.3)">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <rect x="4" y="7" width="20" height="14" rx="3" fill="none" stroke="#EF9F27" stroke-width="1.5"/>
+                <line x1="4" y1="12" x2="24" y2="12" stroke="#EF9F27" stroke-width="1" opacity=".5"/>
+                <circle cx="8" cy="9.5" r="1" fill="#EF9F27" opacity=".6"/>
+                <circle cx="11.5" cy="9.5" r="1" fill="#EF9F27" opacity=".6"/>
+                <circle cx="15" cy="9.5" r="1" fill="#EF9F27" opacity=".6"/>
+                <rect x="7" y="15" width="6" height="1.5" rx=".75" fill="#EF9F27" opacity=".7"/>
+                <rect x="7" y="18" width="9" height="1.5" rx=".75" fill="#EF9F27" opacity=".5"/>
+                <circle cx="21" cy="16.5" r="3" fill="none" stroke="#EF9F27" stroke-width="1.2"/>
+                <line x1="19.9" y1="16.5" x2="22.1" y2="16.5" stroke="#EF9F27" stroke-width="1"/>
+                <line x1="21" y1="15.4" x2="21" y2="17.6" stroke="#EF9F27" stroke-width="1"/>
+              </svg>
+            </div>
+            <div>
+              <div class="product-tag" style="color:#EF9F27;background:rgba(239,159,39,.1)">Gestão de Banco de Dados</div>
+              <h3 class="product-name">Prisma4Postgres</h3>
+            </div>
+          </div>
+          <p class="product-desc">
+            Cliente desktop PostgreSQL standalone construído com Electron.
+            Gerencie bancos de dados com dashboard em tempo real, ERD automático e editor SQL Monaco.
+          </p>
+          <ul class="product-features">
+            <li><i class="ti ti-check"></i> Dashboard com métricas em tempo real</li>
+            <li><i class="ti ti-check"></i> ERD gerado automaticamente</li>
+            <li><i class="ti ti-check"></i> Editor SQL com Monaco</li>
+            <li><i class="ti ti-check"></i> Suporte a pg_cron e EXPLAIN visual</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-stack">
+              <span class="stack-tag">Banco de Dados</span>
+              <span class="stack-tag">DBA</span>
+              <span class="stack-tag">PostgreSQL</span>
+            </div>
+            <a href="https://github.com/britors/Prisma4Postgres" target="_blank" rel="noopener" class="btn btn-outline" style="--accent:#EF9F27;--accent-light:rgba(239,159,39,.15)">
+              Ver no GitHub <i class="ti ti-brand-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="product-accent" style="background:#EF9F27"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFERENCIAIS ──────────────────────────────────────────────────────── -->
+<section id="diferenciais">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-device-desktop"></i></div>
+        <h4>100% Desktop</h4>
+        <p>Funciona sem internet. Seus dados ficam no seu computador, não em servidores de terceiros.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-lock"></i></div>
+        <h4>Dados no seu controle</h4>
+        <p>Banco de dados local (SQLite ou PostgreSQL). Você é dono dos seus dados, sempre.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-puzzle"></i></div>
+        <h4>Extensível via SDK</h4>
+        <p>Filo e Orbi possuem sistema de módulos TypeScript. Adapte o sistema ao seu negócio.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-receipt-off"></i></div>
+        <h4>Sem mensalidade obrigatória</h4>
+        <p>Licença perpétua para microempresas. Pague uma vez e use para sempre.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-brand-github"></i></div>
+        <h4>Open Source</h4>
+        <p>Código aberto, auditável e com comunidade ativa. Transparência total.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ti ti-flag-3"></i></div>
+        <h4>Feito no Brasil</h4>
+        <p>Desenvolvido para a realidade do mercado brasileiro: BRL, NF-e, CNPJ, INSS e IRRF.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPEN SOURCE ───────────────────────────────────────────────────────── -->
+<section id="opensource">
+  <div class="container">
+    <div class="oss-inner">
+      <div class="oss-text">
+        <div class="section-tag">Open Source</div>
+        <h2 class="section-title">Construído em público,<br/>para a comunidade</h2>
+        <p class="section-sub">
+          O <strong>Prisma4Postgres</strong> é nosso projeto open source mais ativo —
+          um cliente PostgreSQL desktop com mais de 15 releases publicados.
+          Todo o código está disponível no GitHub sob licença MIT.
+        </p>
+        <div class="oss-stats">
+          <div class="oss-stat">
+            <span class="oss-num">15+</span>
+            <span class="oss-lbl">Releases</span>
+          </div>
+          <div class="oss-stat">
+            <span class="oss-num">MIT</span>
+            <span class="oss-lbl">Licença</span>
+          </div>
+          <div class="oss-stat">
+            <span class="oss-num">v10.8</span>
+            <span class="oss-lbl">Versão atual</span>
+          </div>
+        </div>
+        <a href="https://github.com/britors/Prisma4Postgres" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="ti ti-brand-github"></i> Ver no GitHub
+        </a>
+      </div>
+      <div class="oss-code">
+        <div class="code-window">
+          <div class="code-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="code-filename">Prisma4Postgres — v10.8.0</span>
+          </div>
+          <div class="code-body">
+            <div class="code-line"><span class="c-cmt">// Tecnologias utilizadas</span></div>
+            <div class="code-line"><span class="c-kw">const</span> stack = {</div>
+            <div class="code-line">  shell:    <span class="c-str">'Electron 42'</span>,</div>
+            <div class="code-line">  language: <span class="c-str">'TypeScript 6'</span>,</div>
+            <div class="code-line">  driver:   <span class="c-str">'node-postgres (pg)'</span>,</div>
+            <div class="code-line">  editor:   <span class="c-str">'Monaco Editor 0.45'</span>,</div>
+            <div class="code-line">  charts:   <span class="c-str">'SVG inline'</span>,</div>
+            <div class="code-line">  bundler:  <span class="c-str">'esbuild'</span>,</div>
+            <div class="code-line">};</div>
+            <div class="code-line"></div>
+            <div class="code-line"><span class="c-cmt">// Distribuição multiplataforma</span></div>
+            <div class="code-line"><span class="c-kw">const</span> targets = [</div>
+            <div class="code-line">  <span class="c-str">'.exe'</span>,  <span class="c-cmt">// Windows</span></div>
+            <div class="code-line">  <span class="c-str">'.deb'</span>,  <span class="c-cmt">// Ubuntu/Debian</span></div>
+            <div class="code-line">  <span class="c-str">'.rpm'</span>,  <span class="c-cmt">// Fedora/RHEL</span></div>
+            <div class="code-line">  <span class="c-str">'AUR'</span>,   <span class="c-cmt">// Arch Linux</span></div>
+            <div class="code-line">];</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE ─────────────────────────────────────────────────────────────── -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-inner">
+      <div class="sobre-content">
+        <div class="section-tag">Sobre</div>
+        <h2 class="section-title">W3TI SERVIÇOS<br/>DE INFORMÁTICA LTDA</h2>
+        <p class="section-sub">
+          Somos uma empresa brasileira especializada no desenvolvimento de software
+          desktop para micro e pequenas empresas. Acreditamos que boas ferramentas
+          de gestão não deveriam ser privilégio de grandes corporações.
+        </p>
+        <p class="section-sub">
+          Nosso compromisso é entregar software moderno, estável e acessível —
+          com dados no controle do cliente, sem dependência de nuvem e sem
+          mensalidades abusivas.
+        </p>
+        <div class="sobre-valores">
+          <div class="valor">
+            <i class="ti ti-code"></i>
+            <span>Código aberto e auditável</span>
+          </div>
+          <div class="valor">
+            <i class="ti ti-heart"></i>
+            <span>Feito para o mercado brasileiro</span>
+          </div>
+          <div class="valor">
+            <i class="ti ti-shield-check"></i>
+            <span>Dados e privacidade em primeiro lugar</span>
+          </div>
+          <div class="valor">
+            <i class="ti ti-users"></i>
+            <span>Suporte humano e direto</span>
+          </div>
+        </div>
+      </div>
+      <div class="sobre-stack">
+        <div class="stack-title">Nossa stack</div>
+        <div class="stack-items">
+          <div class="stack-item"><i class="ti ti-brand-typescript"></i>TypeScript</div>
+          <div class="stack-item"><i class="ti ti-brand-electron"></i>Electron</div>
+          <div class="stack-item"><i class="ti ti-database"></i>PostgreSQL</div>
+          <div class="stack-item"><i class="ti ti-brand-nodejs"></i>Node.js</div>
+          <div class="stack-item"><i class="ti ti-brand-git"></i>Git</div>
+          <div class="stack-item"><i class="ti ti-package"></i>esbuild</div>
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-title" style="margin-top:1.5rem">Plataformas</div>
+        <div class="stack-items">
+          <div class="stack-item"><i class="ti ti-brand-windows"></i>Windows</div>
+          <div class="stack-item"><i class="ti ti-brand-ubuntu"></i>Linux</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTATO ───────────────────────────────────────────────────────────── -->
+<section id="contato">
+  <div class="container">
+    <div class="contato-inner">
+      <div class="section-tag">Contato</div>
+      <h2 class="section-title">Vamos conversar?</h2>
+      <p class="section-sub">
+        Tem interesse em algum produto, quer reportar um bug ou tem uma ideia?
+        Entre em contato — respondemos em até 24 horas.
+      </p>
+      <div class="contato-cards">
+        <a href="mailto:rodrigo@w3ti.com.br" class="contato-card">
+          <i class="ti ti-mail"></i>
+          <div>
+            <strong>E-mail</strong>
+            <span>rodrigo@w3ti.com.br</span>
+          </div>
+        </a>
+        <a href="mailto:rodrigo@w3ti.com.br" class="contato-card">
+          <i class="ti ti-headset"></i>
+          <div>
+            <strong>Suporte</strong>
+            <span>rodrigo@w3ti.com.br</span>
+          </div>
+        </a>
+        <a href="https://github.com/britors" target="_blank" rel="noopener" class="contato-card">
+          <i class="ti ti-brand-github"></i>
+          <div>
+            <strong>GitHub</strong>
+            <span>github.com/britors</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#111827"/>
+        <path d="M6 10 L10 26 L14 16 L18 26 L22 10" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="26" cy="10" r="2.5" fill="#10B981"/>
+        <path d="M26 13 L26 26" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M23 13 L29 13" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <strong>W3TI</strong>
+        <span>SERVIÇOS DE INFORMÁTICA LTDA</span>
+      </div>
+    </div>
+    <div class="footer-products">
+      <a href="#produtos">Filo</a>
+      <a href="#produtos">Fina</a>
+      <a href="#produtos">Orbi</a>
+      <a href="https://github.com/britors/Prisma4Postgres" target="_blank" rel="noopener">Prisma4Postgres</a>
+    </div>
+    <div class="footer-copy">
+      © 2026 W3TI SERVIÇOS DE INFORMÁTICA LTDA. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
