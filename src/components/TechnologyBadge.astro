@@ -1,0 +1,17 @@
+---
+import type { Technology } from '../data/technologies';
+
+interface Props {
+  technology: Technology;
+}
+
+const { technology } = Astro.props;
+---
+
+<li class:list={['technology-badge', `technology-badge--${technology.tone}`]}>
+  <span class="technology-badge__icon" aria-hidden="true"></span>
+  <span>
+    <strong>{technology.name}</strong>
+    <small>{technology.note}</small>
+  </span>
+</li>

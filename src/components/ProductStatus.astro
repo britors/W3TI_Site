@@ -1,0 +1,19 @@
+---
+import type { ProductStatus as Status } from '../data/products';
+
+interface Props {
+  status: Status;
+}
+
+const { status } = Astro.props;
+const labels: Record<Status, string> = {
+  available: 'Produto W3TI',
+  development: 'Em desenvolvimento',
+  external: 'Projeto externo',
+};
+---
+
+<span class:list={['product-status', `product-status--${status}`]}>
+  <span class="product-status__dot" aria-hidden="true"></span>
+  {labels[status]}
+</span>

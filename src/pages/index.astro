@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BackgroundEffect from '../components/BackgroundEffect.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import HeroVisual from '../components/HeroVisual.astro';
+import ProductCard from '../components/ProductCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import TechnologyBadge from '../components/TechnologyBadge.astro';
+import { catalogProducts, developmentProducts } from '../data/products';
+import { siteConfig } from '../data/site';
+import { technologies } from '../data/technologies';
+
+const catalogCategories = [...new Set(catalogProducts.map((product) => product.category))];
+const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
+---
+
+<BaseLayout>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <Header />
+  <main id="conteudo">
+    <section class="hero section-shell" id="inicio">
+      <BackgroundEffect />
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow eyebrow--bright">
+            <span class="eyebrow__pulse"></span> W3TI · produtos de software
+          </p>
+          <h1>Software feito para <em>resolver problemas reais.</em></h1>
+          <p class="hero__lead">
+            Criamos produtos para pessoas, empresas, desenvolvedores e profissionais criativos —
+            combinando engenharia, experiência de uso e inteligência artificial.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#produtos"
+              >Conheça nossos produtos <span aria-hidden="true">↘</span></a
+            >
+            <a class="button button--ghost" href="#contato"
+              >Entrar em contato <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="hero__proof" aria-label="Áreas de atuação da W3TI">
+            <span><i class="proof-dot proof-dot--violet"></i> Desktop</span>
+            <span><i class="proof-dot proof-dot--blue"></i> Dados</span>
+            <span><i class="proof-dot proof-dot--orange"></i> Criação</span>
+          </div>
+        </div>
+        <HeroVisual />
+      </div>
+      <div class="container hero__scroll-hint" aria-hidden="true">
+        <span></span> explore o ecossistema
+      </div>
+    </section>
+
+    <section class="section-shell section-shell--products" id="produtos">
+      <div class="container">
+        <SectionHeader
+          eyebrow="O que estamos construindo"
+          title="Um ecossistema que cresce com intenção."
+          description="Cada produto nasce de um problema concreto. O resultado é um portfólio diverso, conectado pela mesma atenção aos detalhes."
+        />
+        <div class="catalog-groups">
+          {
+            catalogCategories.map((category) => (
+              <section
+                class="category-group"
+                aria-labelledby={`category-${category.toLowerCase().replaceAll(' ', '-')}`}
+              >
+                <div class="category-group__heading">
+                  <h3 id={`category-${category.toLowerCase().replaceAll(' ', '-')}`}>{category}</h3>
+                  <span>
+                    {catalogProducts
+                      .filter((product) => product.category === category)
+                      .length.toString()
+                      .padStart(2, '0')}
+                  </span>
+                </div>
+                <div class="product-grid">
+                  {catalogProducts
+                    .filter((product) => product.category === category)
+                    .map((product) => (
+                      <ProductCard product={product} />
+                    ))}
+                </div>
+              </section>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-shell--development" id="em-desenvolvimento">
+      <div class="container">
+        <div class="development-intro">
+          <SectionHeader
+            eyebrow="Próximos capítulos"
+            title="Ideias em movimento."
+            description="Alguns produtos ainda estão ganhando forma. Mostramos onde estamos para construir uma relação honesta com quem acompanha a W3TI."
+          />
+          <span class="development-intro__index">02 / 04</span>
+        </div>
+        <div class="development-grid">
+          {developmentProducts.map((product) => <ProductCard product={product} compact />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="lyra-section section-shell" id="lyra">
+      <div class="container lyra-card">
+        <div class="lyra-card__visual" aria-hidden="true">
+          <div class="lyra-orbit lyra-orbit--one"></div>
+          <div class="lyra-orbit lyra-orbit--two"></div>
+          <div class="lyra-core"><span>LYRA</span><small>OS</small></div>
+          <span class="lyra-node lyra-node--one">linux</span>
+          <span class="lyra-node lyra-node--two">open</span>
+          <span class="lyra-node lyra-node--three">focus</span>
+        </div>
+        <div class="lyra-card__content">
+          <p class="eyebrow eyebrow--violet">Projeto externo · Linux</p>
+          <h2>Conheça também<br /><em>o Lyra OS.</em></h2>
+          <p>
+            Um sistema operacional Linux criado para oferecer uma experiência moderna, integrada e
+            produtiva.
+          </p>
+          <a
+            class="button button--light"
+            href={siteConfig.lyraUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visitar lyraos.com.br <span aria-hidden="true">↗</span><span class="sr-only">
+              (abre em nova aba)</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell engineering-section" id="engenharia">
+      <div class="container engineering-layout">
+        <SectionHeader
+          eyebrow="Como fazemos"
+          title="Engenharia orientada a produtos."
+          description="Escolhemos tecnologias de acordo com o problema que cada produto precisa resolver. Criamos aplicações desktop, ferramentas de banco de dados, sistemas empresariais e experiências voltadas ao ecossistema Linux."
+        />
+        <ul class="technology-grid">
+          {technologies.map((technology) => <TechnologyBadge technology={technology} />)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-shell company-section" id="empresa">
+      <div class="container company-layout">
+        <div class="company-statement">
+          <span class="company-statement__quote" aria-hidden="true">“</span>
+          <p>
+            A W3TI desenvolve produtos de software para diferentes áreas, sempre com a mesma
+            preocupação: transformar problemas complexos em experiências simples, claras e
+            confiáveis.
+          </p>
+        </div>
+        <div class="company-copy">
+          <p class="eyebrow">Sobre a W3TI</p>
+          <p>
+            Nosso trabalho reúne aplicações pessoais, ferramentas para desenvolvedores, sistemas
+            empresariais e soluções para profissionais criativos.
+          </p>
+          <span class="company-line" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-shell" id="contato">
+      <div class="container contact-card">
+        <div class="contact-card__copy">
+          <p class="eyebrow eyebrow--bright">Vamos conversar</p>
+          <h2>Tem um problema<br /><em>para resolver?</em></h2>
+          <p>
+            Conte um pouco sobre o que você está construindo, usando ou procurando. A W3TI está
+            sempre aberta a boas conversas.
+          </p>
+        </div>
+        <div class="contact-card__action">
+          {
+            contactIsConfigured ? (
+              <a
+                class="button button--primary button--large"
+                href={`mailto:${siteConfig.contactEmail}`}
+              >
+                Entrar em contato <span aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <span class="button button--disabled button--large" aria-disabled="true">
+                E-mail em configuração
+              </span>
+            )
+          }
+          <a
+            class="contact-github"
+            href={siteConfig.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer">Acompanhe no GitHub <span aria-hidden="true">↗</span></a
+          >
+          {
+            !contactIsConfigured && (
+              <p class="contact-card__note">
+                O endereço de contato será publicado aqui quando a configuração for concluída.
+              </p>
+            )
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

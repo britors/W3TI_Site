@@ -1,0 +1,52 @@
+---
+import { navigation } from '../data/navigation';
+import LogoMark from './LogoMark.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <LogoMark />
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Abrir menu</span>
+      <span class="menu-toggle__line"></span>
+      <span class="menu-toggle__line"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a href={`${baseUrl}${item.href}`}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="button button--small button--outline" href={`${baseUrl}#contato`}
+        >Entrar em contato</a
+      >
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+
+  if (header && toggle) {
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-menu-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.querySelector('.sr-only')!.textContent = isOpen ? 'Fechar menu' : 'Abrir menu';
+    });
+
+    header.querySelectorAll<HTMLAnchorElement>('.site-nav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        header.classList.remove('is-menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('.sr-only')!.textContent = 'Abrir menu';
+      });
+    });
+  }
+</script>
