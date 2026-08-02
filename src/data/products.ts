@@ -7,6 +7,7 @@ export interface Product {
   summary: string;
   status: ProductStatus;
   url?: string;
+  modalId?: string;
   technologies?: string[];
   featured?: boolean;
   accent: string;
@@ -62,6 +63,7 @@ export const products: Product[] = [
     summary:
       'Editor de música com recursos inteligentes para análise, estudo e manipulação de áudio.',
     status: 'available',
+    modalId: 'griffin-installation',
     accent: 'pink',
     symbol: 'G',
   },

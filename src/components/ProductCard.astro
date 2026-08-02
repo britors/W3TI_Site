@@ -35,10 +35,19 @@ const { product, compact = false } = Astro.props;
     )
   }
   {
-    product.url && (
+    product.modalId ? (
+      <button
+        class="text-link product-card__action"
+        type="button"
+        data-modal-open={product.modalId}
+        aria-controls={product.modalId}
+      >
+        Ver como instalar <span aria-hidden="true">↗</span>
+      </button>
+    ) : product.url ? (
       <a class="text-link" href={product.url} target="_blank" rel="noopener noreferrer">
         Conhecer produto <span aria-hidden="true">↗</span>
       </a>
-    )
+    ) : null
   }
 </article>
