@@ -285,6 +285,103 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
 
   <dialog
     class="install-modal"
+    id="openbase-installation"
+    aria-labelledby="openbase-installation-title"
+  >
+    <div class="install-modal__panel">
+      <div class="install-modal__header">
+        <div>
+          <p class="eyebrow eyebrow--blue">OpenBase · ferramentas .NET</p>
+          <h2 id="openbase-installation-title">Comece a construir com OpenBase.</h2>
+        </div>
+        <button
+          class="install-modal__close"
+          type="button"
+          data-modal-close
+          aria-label="Fechar instruções"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <p class="install-modal__intro">
+        O OpenBase funciona em duas partes: a extensão para integrar o fluxo ao VS Code e o CLI
+        global do .NET para criar projetos, instalar templates e gerar camadas da aplicação.
+      </p>
+      <div class="install-download install-download--blue">
+        <div>
+          <span class="install-download__label">Extensão para VS Code</span>
+          <small>OpenBase CLI · comandos e acesso rápido no editor</small>
+        </div>
+        <a
+          class="button button--primary"
+          href="https://marketplace.visualstudio.com/items?itemName=RodrigoSoaresdeBrito.openbase"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instalar extensão <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="install-download install-download--blue">
+        <div>
+          <span class="install-download__label">CLI global do .NET</span>
+          <small>Pacote NuGet · w3ti.OpenBase.CLI</small>
+        </div>
+        <a
+          class="button button--primary"
+          href="https://www.nuget.org/packages/w3ti.OpenBase.CLI"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver no NuGet <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="install-steps">
+        <article>
+          <span class="install-step__number">01</span>
+          <h3>Prepare o ambiente</h3>
+          <p>
+            Instale o .NET SDK 10 e confirme a versão com <code>dotnet --version</code>.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">02</span>
+          <h3>Instale o CLI</h3>
+          <p>
+            Instale a ferramenta global com <code>dotnet tool install -g w3ti.OpenBase.Cli</code>.
+            Para atualizar depois, use <code>dotnet tool update -g w3ti.OpenBase.Cli</code>.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">03</span>
+          <h3>Adicione os templates</h3>
+          <p>Execute <code>openbase install</code> para instalar os templates do ecossistema.</p>
+        </article>
+        <article>
+          <span class="install-step__number">04</span>
+          <h3>Crie e gere o projeto</h3>
+          <p>
+            Use <code>openbase new --type api --template pgsql --name MeuProjeto</code> e depois
+            <code>openbase scaffold --entity Product</code>.
+          </p>
+        </article>
+      </div>
+      <div class="install-modal__footer">
+        <span
+          >O CLI também oferece <code>build</code>, <code>run</code> e scaffolding de entidades.</span
+        >
+        <a
+          class="text-link"
+          href="https://github.com/britors/OpenBase.CLI"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ler documentação <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+  <dialog
+    class="install-modal"
     id="griffin-installation"
     aria-labelledby="griffin-installation-title"
   >
@@ -375,12 +472,107 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
       </div>
     </div>
   </dialog>
+  <dialog class="install-modal" id="fina-installation" aria-labelledby="fina-installation-title">
+    <div class="install-modal__panel">
+      <div class="install-modal__header">
+        <div>
+          <p class="eyebrow eyebrow--green">Fina · finanças pessoais</p>
+          <h2 id="fina-installation-title">Organize sua vida financeira.</h2>
+        </div>
+        <button
+          class="install-modal__close"
+          type="button"
+          data-modal-close
+          aria-label="Fechar instruções"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <p class="install-modal__intro">
+        Escolha o caminho correspondente ao seu sistema. As versões para Windows e Linux são para
+        computadores de 64 bits; seus dados ficam armazenados localmente no computador.
+      </p>
+      <div class="install-download install-download--green">
+        <div>
+          <span class="install-download__label">Windows 10 e 11</span>
+          <small>Instalador x86_64 / amd64 · arquivo .exe</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="fina-windows-download"
+          href="https://github.com/britors/Fina/releases/download/v17.10.3/Fina-Setup-17.10.3.exe"
+          download
+        >
+          Baixar .exe <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+      <p class="install-download__note">
+        O botão acompanha automaticamente o instalador da release mais recente. Se o download não
+        começar, <a
+          href="https://github.com/britors/Fina/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer">abra a página de releases</a
+        >.
+      </p>
+      <div class="install-steps">
+        <article>
+          <span class="install-step__number">01</span>
+          <h3>Windows</h3>
+          <p>
+            Baixe o instalador, abra o arquivo e siga as instruções na tela. Depois, inicie o Fina
+            pelo menu Iniciar.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">02</span>
+          <h3>Ubuntu / Debian</h3>
+          <p>
+            O instalador detecta a distribuição e instala o pacote correto. Execute <code
+              >curl -fsSL https://raw.githubusercontent.com/britors/Fina/main/scripts/install.sh |
+              sudo bash</code
+            >.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">03</span>
+          <h3>Fedora / openSUSE</h3>
+          <p>
+            Use o mesmo instalador automático: <code
+              >curl -fsSL https://raw.githubusercontent.com/britors/Fina/main/scripts/install.sh |
+              sudo bash</code
+            >. Ele escolhe o `.rpm` adequado.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">04</span>
+          <h3>Arch / Manjaro</h3>
+          <p>
+            Instale pelo AUR com <code>yay -S fina</code> ou <code>paru -S fina</code>.
+          </p>
+        </article>
+      </div>
+      <div class="install-modal__footer">
+        <span
+          >Os dados locais são preservados ao desinstalar. Linux: <code>~/.config/Fina</code> · Windows:
+          <code>%APPDATA%\Fina</code>.</span
+        >
+        <a
+          class="text-link"
+          href="https://github.com/britors/Fina#readme"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ler documentação <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
   <Footer />
 </BaseLayout>
 
 <script>
-  const installModal = document.querySelector<HTMLDialogElement>('#griffin-installation');
   const windowsDownload = document.querySelector<HTMLAnchorElement>('#griffin-windows-download');
+  const finaWindowsDownload = document.querySelector<HTMLAnchorElement>('#fina-windows-download');
 
   document.querySelectorAll<HTMLButtonElement>('[data-modal-open]').forEach((trigger) => {
     trigger.addEventListener('click', () => {
@@ -400,10 +592,12 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
     });
   });
 
-  installModal?.addEventListener('click', (event) => {
-    if (event.target === installModal) {
-      installModal.close();
-    }
+  document.querySelectorAll<HTMLDialogElement>('.install-modal').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
   });
 
   if (windowsDownload) {
@@ -419,6 +613,26 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
 
         if (windowsAsset?.browser_download_url) {
           windowsDownload.href = windowsAsset.browser_download_url;
+        }
+      })
+      .catch(() => {
+        // O link da release atual permanece como fallback se a API estiver indisponível.
+      });
+  }
+
+  if (finaWindowsDownload) {
+    fetch('https://api.github.com/repos/britors/Fina/releases/latest', {
+      headers: { Accept: 'application/vnd.github+json' },
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+      .then((release) => {
+        const windowsAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /^Fina-Setup-.*\.exe$/i.test(asset.name ?? ''),
+        );
+
+        if (windowsAsset?.browser_download_url) {
+          finaWindowsDownload.href = windowsAsset.browser_download_url;
         }
       })
       .catch(() => {

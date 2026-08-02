@@ -165,8 +165,16 @@ em {
   color: #c1b9ff;
 }
 
+.eyebrow--blue {
+  color: var(--color-blue);
+}
+
 .eyebrow--pink {
   color: #f1b7ff;
+}
+
+.eyebrow--green {
+  color: var(--color-green);
 }
 
 .eyebrow__pulse {
@@ -1285,6 +1293,16 @@ em {
   border: 1px solid rgba(231, 164, 255, 0.24);
   border-radius: var(--radius-md);
 }
+
+.install-download--green {
+  background: rgba(117, 219, 173, 0.08);
+  border-color: rgba(117, 219, 173, 0.24);
+}
+
+.install-download--blue {
+  background: rgba(110, 185, 255, 0.08);
+  border-color: rgba(110, 185, 255, 0.24);
+}
 .install-download__label,
 .install-download small {
   display: block;
@@ -1337,6 +1355,7 @@ em {
   line-height: 1.55;
 }
 .install-steps code {
+  overflow-wrap: anywhere;
   color: var(--color-violet-soft);
   font-family: var(--font-mono);
   font-size: 0.62rem;
@@ -1524,6 +1543,9 @@ em {
 }
 .technology-badge--orange {
   --technology-color: var(--color-orange);
+}
+.technology-badge--red {
+  --technology-color: #ff8f8f;
 }
 .technology-badge--neutral {
   --technology-color: var(--color-text-soft);

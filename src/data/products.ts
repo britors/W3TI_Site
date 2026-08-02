@@ -32,6 +32,7 @@ export const products: Product[] = [
     category: 'Desenvolvimento e bancos de dados',
     summary: 'Ferramentas para acelerar o desenvolvimento de aplicações .NET.',
     status: 'available',
+    modalId: 'openbase-installation',
     technologies: ['.NET', 'PostgreSQL', 'Oracle'],
     accent: 'blue',
     symbol: 'O',
@@ -43,16 +44,18 @@ export const products: Product[] = [
     summary:
       'Aplicação de gestão financeira pessoal criada para tornar o controle das finanças mais simples e claro.',
     status: 'available',
+    modalId: 'fina-installation',
     accent: 'green',
     symbol: 'F',
   },
   {
     name: 'Prosa',
     slug: 'prosa',
-    category: 'Finanças e produtividade',
+    category: 'Criação e produtividade',
     summary:
-      'Plataforma de comunicação desenvolvida para tornar conversas e colaboração mais simples.',
+      'Processador de texto desktop nativo para Linux/GNOME, construído em Rust sobre GTK4 e libadwaita — leve, integrado ao tema do sistema e sem a pegada de memória de uma casca Electron.',
     status: 'available',
+    technologies: ['Rust', 'GTK4', 'libadwaita', 'Linux/GNOME'],
     accent: 'orange',
     symbol: 'P',
   },
