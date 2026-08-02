@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: clamp(10rem, 15vw, 14rem);
   background: var(--color-bg);
 }
 
@@ -273,18 +274,22 @@ em {
 }
 
 .site-header {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   right: 0;
   left: 0;
+  background: rgba(8, 10, 16, 0.82);
+  border-bottom: 1px solid rgba(213, 223, 255, 0.08);
+  backdrop-filter: blur(0.8rem);
 }
 
 .site-header__inner {
   display: flex;
   min-height: 5.5rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  padding-top: 1rem;
 }
 
 .logo {
@@ -296,8 +301,8 @@ em {
 
 .logo__image-wrap {
   display: block;
-  width: 8rem;
-  height: 2.75rem;
+  width: 32rem;
+  height: 11rem;
   overflow: hidden;
   border-radius: 0.35rem;
 }
@@ -308,6 +313,7 @@ em {
   height: 100%;
   object-fit: cover;
   object-position: center 50%;
+  transform: translateX(-27.5%);
 }
 
 .site-nav,
@@ -318,6 +324,7 @@ em {
 
 .site-nav {
   gap: 2rem;
+  align-items: flex-start;
 }
 
 .site-nav ul {
@@ -360,7 +367,7 @@ em {
   display: flex;
   min-height: min(850px, 100svh);
   align-items: center;
-  padding-top: clamp(8rem, 13vw, 11rem);
+  padding-top: clamp(10rem, 15vw, 13rem);
   overflow: hidden;
   isolation: isolate;
 }
@@ -2139,8 +2146,8 @@ em {
 }
 .footer-brand {
   display: block;
-  width: 8.5rem;
-  height: 3.25rem;
+  width: 34rem;
+  height: 13rem;
   overflow: hidden;
   border-radius: 0.4rem;
 }
@@ -2189,6 +2196,9 @@ em {
 }
 
 @media (max-width: 780px) {
+  html {
+    scroll-padding-top: 12rem;
+  }
   .site-header__inner {
     min-height: 4.75rem;
   }
@@ -2233,7 +2243,7 @@ em {
   }
   .hero {
     min-height: auto;
-    padding-top: 8rem;
+    padding-top: 11rem;
     padding-bottom: 5rem;
   }
   .hero__grid {
@@ -2303,11 +2313,14 @@ em {
 }
 
 @media (max-width: 560px) {
+  html {
+    scroll-padding-top: 11rem;
+  }
   .section-shell {
     padding-block: 4.5rem;
   }
   .hero {
-    padding-top: 7.3rem;
+    padding-top: 10rem;
   }
   .hero h1 {
     font-size: clamp(3rem, 15vw, 4.5rem);
