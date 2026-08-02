@@ -21,6 +21,7 @@ export const products: Product[] = [
     category: 'Desenvolvimento e bancos de dados',
     summary: 'Editor SQL moderno para PostgreSQL com inteligência artificial integrada.',
     status: 'available',
+    modalId: 'draco-installation',
     technologies: ['PostgreSQL', 'Linux', 'Inteligência artificial'],
     featured: true,
     accent: 'violet',
@@ -55,6 +56,7 @@ export const products: Product[] = [
     summary:
       'Processador de texto desktop nativo para Linux/GNOME, construído em Rust sobre GTK4 e libadwaita — leve, integrado ao tema do sistema e sem a pegada de memória de uma casca Electron.',
     status: 'available',
+    modalId: 'prosa-installation',
     technologies: ['Rust', 'GTK4', 'libadwaita', 'Linux/GNOME'],
     accent: 'orange',
     symbol: 'P',
