@@ -499,7 +499,7 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
     <div class="install-modal__panel">
       <div class="install-modal__header">
         <div>
-          <p class="eyebrow eyebrow--violet">Draco · Linux</p>
+          <p class="eyebrow eyebrow--violet">Draco · Windows e Linux</p>
           <h2 id="draco-installation-title">Consulte seus dados com clareza.</h2>
         </div>
         <button
@@ -512,9 +512,23 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
         </button>
       </div>
       <p class="install-modal__intro">
-        O Draco está disponível somente para Linux. Baixe o pacote da sua distribuição ou compile a
-        versão nativa em Rust a partir do código-fonte.
+        Escolha o instalador correspondente ao seu sistema ou compile a versão nativa em Rust a
+        partir do código-fonte. Os pacotes são destinados a computadores de 64 bits.
       </p>
+      <div class="install-download install-download--violet">
+        <div>
+          <span class="install-download__label">Windows</span>
+          <small>Instalador x86_64 / amd64 · arquivo .exe</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="draco-windows-download"
+          href="https://github.com/britors/Draco/releases/download/v11.1.5/DracoSetup_11.1.5.exe"
+          download
+        >
+          Baixar .exe <span aria-hidden="true">↓</span>
+        </a>
+      </div>
       <div class="install-download install-download--violet">
         <div>
           <span class="install-download__label">Ubuntu / Debian</span>
@@ -554,13 +568,21 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
       <div class="install-steps">
         <article>
           <span class="install-step__number">01</span>
+          <h3>Windows</h3>
+          <p>
+            Baixe o `.exe`, abra o instalador e siga as instruções na tela. A instalação é feita
+            para o usuário atual e não exige acesso de administrador.
+          </p>
+        </article>
+        <article>
+          <span class="install-step__number">02</span>
           <h3>Ubuntu / Debian</h3>
           <p>
             Baixe o `.deb` e instale com <code>sudo apt install ./draco_versao_amd64.deb</code>.
           </p>
         </article>
         <article>
-          <span class="install-step__number">02</span>
+          <span class="install-step__number">03</span>
           <h3>Fedora / openSUSE</h3>
           <p>
             Use o `.rpm` com <code>sudo dnf install ./draco_versao_amd64.rpm</code> ou <code
@@ -569,25 +591,17 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
           </p>
         </article>
         <article>
-          <span class="install-step__number">03</span>
+          <span class="install-step__number">04</span>
           <h3>Compilar do código</h3>
           <p>
-            Instale Rust estável, GTK4, libadwaita e GtkSourceView5. Depois execute <code
-              >cargo build --release</code
+            Instale Rust 1.85 ou superior e as dependências de sistema. Execute <code
+              >cargo build --locked --release -p draco-tauri</code
             > e rode <code>./target/release/draco</code>.
-          </p>
-        </article>
-        <article>
-          <span class="install-step__number">04</span>
-          <h3>Dependências</h3>
-          <p>
-            Requer GTK4 4.12 ou superior, libadwaita 1.5 ou superior e GtkSourceView5 5.0 ou
-            superior.
           </p>
         </article>
       </div>
       <div class="install-modal__footer">
-        <span>Cliente PostgreSQL nativo em Rust · disponível somente para Linux.</span>
+        <span>Cliente PostgreSQL nativo em Rust · disponível para Windows e Linux.</span>
         <a
           class="text-link"
           href="https://github.com/britors/Draco"
@@ -728,14 +742,42 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
         <a
           class="button button--primary"
           id="griffin-windows-download"
-          href="https://github.com/britors/Griffin/releases/download/v1.0.1/Griffin.Music_1.0.1_x64-setup.exe"
+          href="https://github.com/britors/Griffin/releases/download/v3.0.3/Griffin.Music_3.0.3_x64-setup.exe"
           download
         >
           Baixar .exe <span aria-hidden="true">↓</span>
         </a>
       </div>
+      <div class="install-download">
+        <div>
+          <span class="install-download__label">Ubuntu / Debian</span>
+          <small>Pacote x86_64 / amd64 · arquivo .deb</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="griffin-deb-download"
+          href="https://github.com/britors/Griffin/releases/download/v3.0.3/Griffin.Music_3.0.3_amd64.deb"
+          download
+        >
+          Baixar .deb <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+      <div class="install-download">
+        <div>
+          <span class="install-download__label">Fedora / openSUSE</span>
+          <small>Pacote x86_64 · arquivo .rpm</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="griffin-rpm-download"
+          href="https://github.com/britors/Griffin/releases/download/v3.0.3/griffin-music-3.0.3-1.x86_64.rpm"
+          download
+        >
+          Baixar .rpm <span aria-hidden="true">↓</span>
+        </a>
+      </div>
       <p class="install-download__note">
-        O botão acompanha automaticamente o `.exe` da release mais recente. Se o download não
+        Os botões acompanham automaticamente os pacotes da release mais recente. Se o download não
         começar, <a
           href="https://github.com/britors/Griffin/releases/latest"
           target="_blank"
@@ -816,14 +858,42 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
         <a
           class="button button--primary"
           id="fina-windows-download"
-          href="https://github.com/britors/Fina/releases/download/v17.10.3/Fina-Setup-17.10.3.exe"
+          href="https://github.com/britors/Fina/releases/download/v18.0.1/Fina-Setup-18.0.1.exe"
           download
         >
           Baixar .exe <span aria-hidden="true">↓</span>
         </a>
       </div>
+      <div class="install-download install-download--green">
+        <div>
+          <span class="install-download__label">Ubuntu / Debian</span>
+          <small>Pacote x86_64 / amd64 · arquivo .deb</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="fina-deb-download"
+          href="https://github.com/britors/Fina/releases/download/v18.0.1/fina_18.0.1_amd64.deb"
+          download
+        >
+          Baixar .deb <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+      <div class="install-download install-download--green">
+        <div>
+          <span class="install-download__label">Fedora / openSUSE</span>
+          <small>Pacote x86_64 · arquivo .rpm</small>
+        </div>
+        <a
+          class="button button--primary"
+          id="fina-rpm-download"
+          href="https://github.com/britors/Fina/releases/download/v18.0.1/fina-18.0.1.x86_64.rpm"
+          download
+        >
+          Baixar .rpm <span aria-hidden="true">↓</span>
+        </a>
+      </div>
       <p class="install-download__note">
-        O botão acompanha automaticamente o instalador da release mais recente. Se o download não
+        Os botões acompanham automaticamente os pacotes da release mais recente. Se o download não
         começar, <a
           href="https://github.com/britors/Fina/releases/latest"
           target="_blank"
@@ -843,20 +913,15 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
           <span class="install-step__number">02</span>
           <h3>Ubuntu / Debian</h3>
           <p>
-            O instalador detecta a distribuição e instala o pacote correto. Execute <code
-              >curl -fsSL https://raw.githubusercontent.com/britors/Fina/main/scripts/install.sh |
-              sudo bash</code
-            >.
+            Baixe o `.deb` e instale com <code>sudo apt install ./fina_versao_amd64.deb</code>.
           </p>
         </article>
         <article>
           <span class="install-step__number">03</span>
           <h3>Fedora / openSUSE</h3>
           <p>
-            Use o mesmo instalador automático: <code
-              >curl -fsSL https://raw.githubusercontent.com/britors/Fina/main/scripts/install.sh |
-              sudo bash</code
-            >. Ele escolhe o `.rpm` adequado.
+            Baixe o `.rpm` e instale com <code>sudo dnf install ./fina-versao.x86_64.rpm</code> ou
+            <code>sudo zypper install ./fina-versao.x86_64.rpm</code>.
           </p>
         </article>
         <article>
@@ -995,10 +1060,17 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
 </BaseLayout>
 
 <script>
-  const windowsDownload = document.querySelector<HTMLAnchorElement>('#griffin-windows-download');
+  const griffinWindowsDownload = document.querySelector<HTMLAnchorElement>(
+    '#griffin-windows-download',
+  );
+  const griffinDebDownload = document.querySelector<HTMLAnchorElement>('#griffin-deb-download');
+  const griffinRpmDownload = document.querySelector<HTMLAnchorElement>('#griffin-rpm-download');
   const finaWindowsDownload = document.querySelector<HTMLAnchorElement>('#fina-windows-download');
+  const finaDebDownload = document.querySelector<HTMLAnchorElement>('#fina-deb-download');
+  const finaRpmDownload = document.querySelector<HTMLAnchorElement>('#fina-rpm-download');
   const prosaDebDownload = document.querySelector<HTMLAnchorElement>('#prosa-deb-download');
   const prosaRpmDownload = document.querySelector<HTMLAnchorElement>('#prosa-rpm-download');
+  const dracoWindowsDownload = document.querySelector<HTMLAnchorElement>('#draco-windows-download');
   const dracoDebDownload = document.querySelector<HTMLAnchorElement>('#draco-deb-download');
   const dracoRpmDownload = document.querySelector<HTMLAnchorElement>('#draco-rpm-download');
 
@@ -1028,7 +1100,7 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
     });
   });
 
-  if (windowsDownload) {
+  if (griffinWindowsDownload || griffinDebDownload || griffinRpmDownload) {
     fetch('https://api.github.com/repos/britors/Griffin/releases/latest', {
       headers: { Accept: 'application/vnd.github+json' },
     })
@@ -1038,17 +1110,31 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
           (asset: { name?: string; browser_download_url?: string }) =>
             /\.exe$/i.test(asset.name ?? ''),
         );
+        const debAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /\.deb$/i.test(asset.name ?? ''),
+        );
+        const rpmAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /\.rpm$/i.test(asset.name ?? ''),
+        );
 
-        if (windowsAsset?.browser_download_url) {
-          windowsDownload.href = windowsAsset.browser_download_url;
+        if (windowsAsset?.browser_download_url && griffinWindowsDownload) {
+          griffinWindowsDownload.href = windowsAsset.browser_download_url;
+        }
+        if (debAsset?.browser_download_url && griffinDebDownload) {
+          griffinDebDownload.href = debAsset.browser_download_url;
+        }
+        if (rpmAsset?.browser_download_url && griffinRpmDownload) {
+          griffinRpmDownload.href = rpmAsset.browser_download_url;
         }
       })
       .catch(() => {
-        // O link da release atual permanece como fallback se a API estiver indisponível.
+        // Os links da release atual permanecem como fallback se a API estiver indisponível.
       });
   }
 
-  if (finaWindowsDownload) {
+  if (finaWindowsDownload || finaDebDownload || finaRpmDownload) {
     fetch('https://api.github.com/repos/britors/Fina/releases/latest', {
       headers: { Accept: 'application/vnd.github+json' },
     })
@@ -1058,13 +1144,27 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
           (asset: { name?: string; browser_download_url?: string }) =>
             /^Fina-Setup-.*\.exe$/i.test(asset.name ?? ''),
         );
+        const debAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /\.deb$/i.test(asset.name ?? ''),
+        );
+        const rpmAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /^fina-(?!latest).*\.rpm$/i.test(asset.name ?? ''),
+        );
 
-        if (windowsAsset?.browser_download_url) {
+        if (windowsAsset?.browser_download_url && finaWindowsDownload) {
           finaWindowsDownload.href = windowsAsset.browser_download_url;
+        }
+        if (debAsset?.browser_download_url && finaDebDownload) {
+          finaDebDownload.href = debAsset.browser_download_url;
+        }
+        if (rpmAsset?.browser_download_url && finaRpmDownload) {
+          finaRpmDownload.href = rpmAsset.browser_download_url;
         }
       })
       .catch(() => {
-        // O link da release atual permanece como fallback se a API estiver indisponível.
+        // Os links da release atual permanecem como fallback se a API estiver indisponível.
       });
   }
 
@@ -1095,12 +1195,16 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
       });
   }
 
-  if (dracoDebDownload || dracoRpmDownload) {
+  if (dracoWindowsDownload || dracoDebDownload || dracoRpmDownload) {
     fetch('https://api.github.com/repos/britors/Draco/releases/latest', {
       headers: { Accept: 'application/vnd.github+json' },
     })
       .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
       .then((release) => {
+        const windowsAsset = release.assets?.find(
+          (asset: { name?: string; browser_download_url?: string }) =>
+            /\.exe$/i.test(asset.name ?? ''),
+        );
         const debAsset = release.assets?.find(
           (asset: { name?: string; browser_download_url?: string }) =>
             /\.deb$/i.test(asset.name ?? ''),
@@ -1110,6 +1214,9 @@ const contactIsConfigured = !siteConfig.contactEmail.startsWith('CONTATO_');
             /\.rpm$/i.test(asset.name ?? ''),
         );
 
+        if (windowsAsset?.browser_download_url && dracoWindowsDownload) {
+          dracoWindowsDownload.href = windowsAsset.browser_download_url;
+        }
         if (debAsset?.browser_download_url && dracoDebDownload) {
           dracoDebDownload.href = debAsset.browser_download_url;
         }
