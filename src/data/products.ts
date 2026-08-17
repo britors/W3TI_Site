@@ -50,29 +50,6 @@ export const products: Product[] = [
     symbol: 'F',
   },
   {
-    name: 'Prosa',
-    slug: 'prosa',
-    category: 'Criação e produtividade',
-    summary:
-      'Processador de texto desktop nativo para Linux/GNOME, construído em Rust sobre GTK4 e libadwaita — leve, integrado ao tema do sistema e sem a pegada de memória de uma casca Electron.',
-    status: 'available',
-    modalId: 'prosa-installation',
-    technologies: ['Rust', 'GTK4', 'libadwaita', 'Linux/GNOME'],
-    accent: 'orange',
-    symbol: 'P',
-  },
-  {
-    name: 'Griffin',
-    slug: 'griffin',
-    category: 'Música e criação',
-    summary:
-      'Editor de música com recursos inteligentes para análise, estudo e manipulação de áudio.',
-    status: 'available',
-    modalId: 'griffin-installation',
-    accent: 'pink',
-    symbol: 'G',
-  },
-  {
     name: 'Filo',
     slug: 'filo',
     category: 'Produtos em desenvolvimento',
