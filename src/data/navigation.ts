@@ -8,4 +8,5 @@ export const navigation: NavigationItem[] = [
   { label: 'Em desenvolvimento', href: '#em-desenvolvimento' },
   { label: 'Lyra OS', href: '#lyra' },
   { label: 'Empresa', href: '#empresa' },
+  { label: 'Plugins', href: '#plugins' },
 ];
