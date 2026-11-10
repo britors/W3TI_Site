@@ -29,7 +29,26 @@ const organizationSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#080a10" />
+    <meta name="theme-color" content="#ffffff" />
+    <script is:inline>
+      // Aplica o tema antes da primeira pintura: escolha salva ou preferência do sistema.
+      (() => {
+        let stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch {}
+        const theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.dataset.theme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#0a1428' : '#ffffff');
+      })();
+    </script>
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href={`${baseUrl}favicon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${baseUrl}manifest.webmanifest`} />

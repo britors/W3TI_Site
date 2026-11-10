@@ -4,19 +4,12 @@ import type { Product } from '../data/products';
 
 interface Props {
   product: Product;
-  compact?: boolean;
 }
 
-const { product, compact = false } = Astro.props;
+const { product } = Astro.props;
 ---
 
-<article
-  class:list={[
-    'product-card',
-    `product-card--${product.accent}`,
-    { 'product-card--compact': compact },
-  ]}
->
+<article class:list={['product-card', `accent--${product.accent}`]}>
   <div class="product-card__topline">
     <span class="product-symbol" aria-hidden="true">{product.symbol}</span>
     <ProductStatus status={product.status} />
@@ -27,7 +20,7 @@ const { product, compact = false } = Astro.props;
   </div>
   {
     product.technologies && (
-      <ul class="product-card__tags" aria-label={`Tecnologias relacionadas a ${product.name}`}>
+      <ul class="tag-list" aria-label={`Tecnologias relacionadas a ${product.name}`}>
         {product.technologies.map((technology) => (
           <li>{technology}</li>
         ))}
@@ -42,11 +35,11 @@ const { product, compact = false } = Astro.props;
         data-modal-open={product.modalId}
         aria-controls={product.modalId}
       >
-        Ver como instalar <span aria-hidden="true">↗</span>
+        Como instalar <span aria-hidden="true">→</span>
       </button>
     ) : product.url ? (
       <a class="text-link" href={product.url} target="_blank" rel="noopener noreferrer">
-        Conhecer produto <span aria-hidden="true">↗</span>
+        Saiba mais <span aria-hidden="true">↗</span>
       </a>
     ) : null
   }

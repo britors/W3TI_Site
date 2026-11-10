@@ -12,6 +12,7 @@ export const technologies: Technology[] = [
   { name: 'Rust', note: 'performance nativa', tone: 'orange' },
   { name: 'Tauri', note: 'desktop eficiente', tone: 'green' },
   { name: 'Astro', note: 'sites rápidos', tone: 'orange' },
+  { name: 'Kotlin', note: 'aplicativos Android', tone: 'violet' },
   { name: '.NET', note: 'aplicações empresariais', tone: 'violet' },
   { name: 'SQL Server', note: 'dados empresariais', tone: 'blue' },
   { name: 'PostgreSQL', note: 'dados confiáveis', tone: 'blue' },
