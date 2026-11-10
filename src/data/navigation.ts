@@ -4,8 +4,8 @@ export interface NavigationItem {
 }
 
 export const navigation: NavigationItem[] = [
-  { label: 'Início', href: '#inicio' },
   { label: 'Produtos', href: '#produtos' },
+  { label: 'Em desenvolvimento', href: '#em-desenvolvimento' },
+  { label: 'Lyra OS', href: '#lyra' },
   { label: 'Empresa', href: '#empresa' },
-  { label: 'Contato', href: '#contato' },
 ];

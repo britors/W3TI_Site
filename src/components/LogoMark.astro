@@ -3,9 +3,21 @@ import { siteConfig } from '../data/site';
 
 interface Props {
   compact?: boolean;
+  /**
+   * `light`: nome em branco, para fundos escuros. `dark`: nome em azul-marinho, para fundos
+   * claros. `auto`: acompanha o tema da página.
+   */
+  tone?: 'light' | 'dark' | 'auto';
 }
 
-const { compact = false } = Astro.props;
+const { compact = false, tone = 'light' } = Astro.props;
+const images =
+  tone === 'auto'
+    ? [
+        { src: siteConfig.logoImageDark, className: 'logo__image--for-light' },
+        { src: siteConfig.logoImage, className: 'logo__image--for-dark' },
+      ]
+    : [{ src: tone === 'dark' ? siteConfig.logoImageDark : siteConfig.logoImage, className: '' }];
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
@@ -15,13 +27,17 @@ const baseUrl = import.meta.env.BASE_URL;
   aria-label="W3TI — início"
 >
   <span class="logo__image-wrap">
-    <img
-      class="logo__image"
-      src={`${baseUrl}${siteConfig.logoImage}`}
-      alt="W3TI"
-      width="1536"
-      height="1024"
-    />
+    {
+      images.map((image) => (
+        <img
+          class:list={['logo__image', image.className]}
+          src={`${baseUrl}${image.src}`}
+          alt="W3TI"
+          width="1536"
+          height="1024"
+        />
+      ))
+    }
   </span>
   {compact && <span class="sr-only">W3TI</span>}
 </a>

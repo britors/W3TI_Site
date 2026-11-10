@@ -1,6 +1,6 @@
 # W3TI — site institucional
 
-Site institucional estático da W3TI, empresa brasileira que cria produtos de software para usuários, desenvolvedores, profissionais criativos e pequenas e médias empresas.
+Site institucional estático da W3TI, empresa brasileira que cria produtos de software para usuários, desenvolvedores e pequenas e médias empresas.
 
 ## Stack
 
