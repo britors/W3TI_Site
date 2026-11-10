@@ -55,18 +55,6 @@ export const products: Product[] = [
     symbol: 'F',
   },
   {
-    name: 'Estimar Tokens',
-    slug: 'estimar-tokens',
-    category: 'Desenvolvimento e bancos de dados',
-    summary:
-      'Skill para o Claude Code que estima o custo em tokens de cada etapa antes de executá-la, evitando que a sessão pare no meio por limite de uso.',
-    status: 'available',
-    url: 'https://github.com/britors/estimar-tokens',
-    technologies: ['Claude Code', 'IA'],
-    accent: 'orange',
-    symbol: 'E',
-  },
-  {
     name: 'Lyrnova',
     slug: 'lyrnova',
     category: 'Produtos em desenvolvimento',

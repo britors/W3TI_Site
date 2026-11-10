@@ -2,9 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import PluginCard from '../components/PluginCard.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import TechnologyBadge from '../components/TechnologyBadge.astro';
+import { plugins } from '../data/plugins';
 import { catalogProducts, developmentProducts, products } from '../data/products';
 import { siteConfig } from '../data/site';
 import { technologies } from '../data/technologies';
@@ -338,6 +340,25 @@ const highlights = [
             empresariais, jogos e o ecossistema Linux do Lyra OS.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="plugins">
+      <div class="container">
+        <SectionHeader
+          eyebrow="Plugins para Claude Code"
+          title="Plugins que deixam o Claude Code mais econômico e confiável."
+          description="Plugins gratuitos e de código aberto para o Claude Code, o assistente de programação da Anthropic. Cada um resolve um problema do dia a dia: custo de tokens, contexto, escopo, commits, revisão de texto e orçamentos."
+        />
+        <div class="product-grid plugin-grid">
+          {plugins.map((plugin) => <PluginCard plugin={plugin} />)}
+        </div>
+        <p class="plugin-note">
+          Os plugins funcionam no Claude Code 2.1.275 ou mais novo. Os que usam hooks precisam de
+          <code>python3</code> no PATH. Em versões anteriores, adicione o marketplace com
+          <code>/plugin marketplace add britors/&lt;plugin&gt;</code> e instale com
+          <code>/plugin install &lt;plugin&gt;@&lt;plugin&gt;</code>.
+        </p>
       </div>
     </section>
 

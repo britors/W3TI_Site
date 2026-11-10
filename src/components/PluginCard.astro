@@ -1,0 +1,33 @@
+---
+import type { Plugin } from '../data/plugins';
+
+interface Props {
+  plugin: Plugin;
+}
+
+const { plugin } = Astro.props;
+---
+
+<article class:list={['product-card', 'plugin-card', `accent--${plugin.accent}`]}>
+  <div class="product-card__topline">
+    <span class="product-symbol" aria-hidden="true">{plugin.symbol}</span>
+    <ul class="tag-list" aria-label={`Componentes do plugin ${plugin.name}`}>
+      {plugin.components.map((component) => <li>{component}</li>)}
+    </ul>
+  </div>
+  <div class="product-card__body">
+    <h3>{plugin.name}</h3>
+    <p>{plugin.summary}</p>
+  </div>
+  <ul class="plugin-card__features">
+    {plugin.features.map((feature) => <li>{feature}</li>)}
+  </ul>
+  <div class="plugin-card__install">
+    <span class="plugin-card__install-label">Instalação</span>
+    <code>/plugin install {plugin.slug} --marketplace britors/{plugin.slug}</code>
+  </div>
+  <a class="text-link" href={plugin.url} target="_blank" rel="noopener noreferrer">
+    Ver no GitHub <span aria-hidden="true">↗</span>
+    <span class="sr-only"> {plugin.name} (abre em nova aba)</span>
+  </a>
+</article>
